@@ -1,6 +1,7 @@
 from App.Actor import Actor
 
 class User(Actor):
+	
 	id = 0
 	name = ""
 	lock = False

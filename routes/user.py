@@ -49,11 +49,12 @@ def signup():
 		name = request.form.get('name')
 		email = request.form.get('email')
 		password = request.form.get('password')
+		mob = request.form.get('mob')
 
-		if len(name) < 1 or len(email)<1 or len(password)<1:
+		if len(name) < 1 or len(email)<1 or len(password)<1 or len(mob)<1:
 			return render_template('signup.html', error="All fields are required")
 
-		new_user = user_manager.signup(name, email, hash(password))
+		new_user = user_manager.signup(name, email, hash(password), mob)
 
 		if new_user == "already_exists":
 			return render_template('signup.html', error="User already exists with this email")
@@ -94,9 +95,9 @@ def update():
 	name = str(_form["name"])
 	email = str(_form["email"])
 	password = str(_form["password"])
-	bio = str(_form["bio"])
+	mob = str(_form["mob"])
 
-	user_manager.update(name, email, hash(password), bio, user_manager.user.uid())
+	user_manager.update(name, email, hash(password), mob, user_manager.user.uid())
 
 	flash('Your info has been updated!')
 	return redirect("/user/")

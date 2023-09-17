@@ -5,3 +5,16 @@
 .welcome h1 {
 	font-size: 3.5em;
 }
+
+.frame-div {
+	display: flex;
+  	justify-content: center;
+  	height: 800px;
+	position: relative;
+	z-index: -1;
+}
+
+.frame-img {
+	width: 44vh; 
+	height: auto;
+}

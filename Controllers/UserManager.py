@@ -31,13 +31,13 @@ class UserManager():
 
 		return user
 
-	def signup(self, name, email, password):
+	def signup(self, name, email, password, mob):
 		user = self.dao.getByEmail(email)
 
 		if user is not None:
 			return "already_exists"
 
-		user_info = {"name": name, "email": email, "password": password}
+		user_info = {"name": name, "email": email, "password": password, "mob": mob}
 		
 		new_user = self.dao.add(user_info)
 
@@ -48,8 +48,8 @@ class UserManager():
 
 		return user
 		
-	def update(self, name, email, password, bio, id):
-		user_info = {"name": name, "email": email, "password": password, "bio":bio}
+	def update(self, name, email, password, mob, id):
+		user_info = {"name": name, "email": email, "password": password, "mob": mob}
 		
 		user = self.dao.update(user_info, id)
 

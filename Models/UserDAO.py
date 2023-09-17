@@ -5,7 +5,7 @@ class UserDAO():
 
 
 	def list(self):
-		users = self.db.query("select @table.id,@table.name,@table.email,@table.bio,@table.mob,@table.lock,@table.created_at,count(reserve.book_id) as books_owned from @table LEFT JOIN reserve ON reserve.user_id=@table.id GROUP BY reserve.user_id").fetchall()
+		users = self.db.query("select @table.id,@table.name,@table.email,@table.mob,@table.lock,@table.created_at,count(reserve.book_id) as books_owned from @table LEFT JOIN reserve ON reserve.user_id=@table.id GROUP BY reserve.user_id").fetchall()
 
 		return users
 
@@ -34,8 +34,9 @@ class UserDAO():
 		name = user['name']
 		email = user['email']
 		password = user['password']
+		mob = user['mob']
 
-		q = self.db.query("INSERT INTO @table (name, email, password) VALUES('{}', '{}', '{}');".format(name, email, password))
+		q = self.db.query("INSERT INTO @table (name, email, password, mob) VALUES('{}', '{}', '{}', {});".format(name, email, password, mob))
 		self.db.commit()
 		
 		return q
@@ -45,9 +46,9 @@ class UserDAO():
 		name = user['name']
 		email = user['email']
 		password = user['password']
-		bio = user['bio']
+		mob = user['mob']
 
-		q = self.db.query("UPDATE @table SET name = '{}', email='{}', password='{}', bio='{}' WHERE id={}".format(name, email, password, bio, _id))
+		q = self.db.query("UPDATE @table SET name = '{}', email='{}', password='{}', mob='{}' WHERE id={}".format(name, email, password, mob, _id))
 		self.db.commit()
 		
 		return q

@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://cloudconvert.com/
+HostUrl=https://storage.cloudconvert.com/tasks/e305739a-9e35-45c1-80f9-f57d47df621f/banner3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cloudconvert-production%2F20230917%2Ffra%2Fs3%2Faws4_request&X-Amz-Date=20230917T043854Z&X-Amz-Expires=86400&X-Amz-Signature=e03f2a7e5814c07119bb9e488962aab73b7733d84c8e9b8ef006afdff8127bee&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3D%22banner3.png%22&response-content-type=image%2Fpng&x-id=GetObject

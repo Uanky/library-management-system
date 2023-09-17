@@ -1,0 +1,55 @@
+{%extends "/shared/layout.html" %}
+
+{% block title %}Signup{% endblock %}
+
+{% block head %}
+	{{ super() }}
+
+    <link rel="stylesheet" href="/static/home.css" />
+{% endblock %}
+
+{% block content %}
+<img src="static/images/tallframe.svg" style="width: 22%; height: auto; top: 12%; left: 39%; position: fixed; z-index: -1;" />
+	<div class="container d-flex h-75">
+	    <div class="row justify-content-center welcome">
+			
+			<h4 style="color: rgba(255, 255, 255, 0);">Signup</h4>
+
+			<div style="width:90%">
+				<h4 style="font-size: 1.3em; font-weight: lighter;">QTLibrary Signup<br>&nbsp</h4>
+			{% if msg %}
+				<div class="alert alert-success">
+					{{msg}}
+				</div>
+			{% endif %}
+			{% if error %}
+				<div class="alert alert-danger">
+					{{error}}
+				</div>
+			{% endif %}
+			<form action="/signup" method="POST">
+			  <div class="form-group">
+			    <label for="name">Name</label>
+			    <input type="text" class="form-control" id="name" name="name" aria-describedby="name">
+			  </div>
+			  <div class="form-group">
+			    <label for="email">Email address</label>
+			    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+			    <small id="emailHelp" class="form-text text-muted" style="color: rgba(255, 255, 255, 0);">We'll never share your email with anyone else.</small>
+			  </div>
+			  <div class="form-group">
+			    <label for="password">Password</label>
+			    <input type="password" class="form-control" id="password" name="password">
+			  </div>
+			  <div class="form-group">
+			    <label for="mob">Mobile number</label>
+			    <input type="text" class="form-control" id="mob" name="mob" aria-describedby="mob">
+			  </div>
+			  
+			  <button type="submit" class="btn btn-primary" style="background-color: rgba(22, 31, 56, 0.877); border-radius: 10%;">Signup</button>
+			  	<!-- <a style="margin-left: 10px" href="/signup">Or join us now!</a> -->
+			</form>
+			</div>
+	    </div>
+	</div>
+{% endblock %}

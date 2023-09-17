@@ -39,7 +39,8 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `email`, `password`) VALUES
-(1, 'hamza@gmail.com', '025db420560617303c2ba988d050ec62562343bc0fb0358d31d2f0bae8dbede8');
+(1, 'jackdoepel@gmail.com', 'Z1mZimm4'),
+(2, 'snazzybot@protonmail.com', 'p00bles');
 
 -- --------------------------------------------------------
 
@@ -96,9 +97,7 @@ CREATE TABLE `users` (
   `name` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `password` varchar(1000) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `bio` longtext COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `mob` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `lock` tinyint(1) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
@@ -106,9 +105,8 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `bio`, `mob`, `lock`, `created_at`) VALUES
-(1, 'Hamza', 'hamza@gmail.com', '025db420560617303c2ba988d050ec62562343bc0fb0358d31d2f0bae8dbede8', 'They watch you from the shelf while you sleep 👀. Are you dreaming of them, they wonder, in that wistful mood books are prone to at night when they’re bored and there’s nothing else to do but tease the cat.?', '', 0, '2021-11-09 00:00:00'),
-(6, 'Naveed Ali', 'naveed@gmail.com', '025db420560617303c2ba988d050ec62562343bc0fb0358d31d2f0bae8dbede8', 'Hi :)! Long time no see ❤️', '', 0, '2021-11-18 23:07:53');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `mob`, `created_at`) VALUES
+(1, 'Snack', 'jackdoepel@gmail.com', 'Z1mZ1mm4', '123', '2021-11-09 00:00:00');
 
 --
 -- Indexes for dumped tables
